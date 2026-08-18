@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎭 Funny Filter Cam</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Funny Filter Cam</h1>
+
+        <!-- Room Join Section -->
+        <div id="joinSection" class="join-section">
+            <h2>Enter Room ID</h2>
+            <input type="text" id="roomInput" placeholder="Enter room code..." />
+            <button id="joinBtn" class="btn primary">🎥 Join Room</button>
+            <p style="margin-top: 10px; color: #888; font-size: 0.8em;">
+                Ask the host for the room code
+            </p>
+        </div>
+
+        <!-- Camera Section (hidden until joined) -->
+        <div id="cameraSection" style="display:none;">
+            <div class="video-wrapper">
+                <video id="localVideo" autoplay playsinline muted></video>
+                <canvas id="filterCanvas"></canvas>
+                <div class="filter-badge">😜 FUNNY MODE</div>
+                <div class="status-badge" id="statusBadge">🔴 Streaming</div>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="btn primary">📸 Start Camera</button>
+                <button id="stopBtn" class="btn danger" style="display:none;">⏹ Stop</button>
+                <button id="screenshotBtn" class="btn secondary" style="display:none;">📷 Screenshot</button>
+            </div>
+
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="none">😐 Normal</button>
+                <button class="filter-btn" data-filter="funny">🤪 Funny</button>
+                <button class="filter-btn" data-filter="mustache">🧔 Mustache</button>
+                <button class="filter-btn" data-filter="glasses">👓 Glasses</button>
+                <button class="filter-btn" data-filter="bigeyes">👀 Big Eyes</button>
+                <button class="filter-btn" data-filter="invert">🔄 Invert</button>
+                <button class="filter-btn" data-filter="alien">👽 Alien</button>
+                <button class="filter-btn" data-filter="clown">🤡 Clown</button>
+            </div>
+
+            <div class="room-info">
+                <span>📍 Room: <strong id="roomDisplay"></strong></span>
+                <button id="leaveBtn" class="btn danger small">🚪 Leave</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
