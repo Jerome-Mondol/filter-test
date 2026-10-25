@@ -4,7 +4,7 @@
   "description": "Funny filter app with hidden admin view",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node api.js && node server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
