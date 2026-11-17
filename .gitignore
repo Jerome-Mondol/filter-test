@@ -10,5 +10,3 @@ config.bat
 venv/
 
 # Environment variables & secrets (added by GitHub Guardian)
-.env
-.env.*
